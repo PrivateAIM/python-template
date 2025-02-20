@@ -1,20 +1,27 @@
-[tool.poetry]
+[project]
 name = "python-template-repo"
 version = "0.1.0"
 description = ""
-authors = ["Maximilian Jugl <Maximilian.Jugl@medizin.uni-leipzig.de>"]
+authors = [
+    {name = "Maximilian Jugl", email = "Maximilian.Jugl@medizin.uni-leipzig.de"}
+]
 readme = "README.md"
-packages = [{ include = "project" }]
+requires-python = ">=3.10"
+dependencies = [
+]
 license = "Apache-2.0"
 
-[tool.poetry.dependencies]
-python = "^3.10"
+[tool.poetry]
+packages = [{ include = "project" }]
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.4.4"
-ruff = "^0.1.15"
-pre-commit = "^3.6.1"
+pytest = ">=8.3.0"
+ruff = ">=0.9.0"
+pre-commit = ">=4.0.0"
+
+[tool.ruff]
+line-length = 120
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
